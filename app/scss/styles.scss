@@ -1,11 +1,8 @@
 // Core variables and mixins
 @import "bootstrap-grid";
-
-
 // Reset and dependencies
 @import "normalize";
 @import "print";
-
 //Template Fonts
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=cyrillic,cyrillic-ext');
 
@@ -13,7 +10,7 @@
 $def_bg: #fefefe;
 $def_font: 'Roboto', sans-serif;
 
-html,body{
+html, body {
   background: $def_bg;
   min-height: 100vh;
 }
@@ -22,12 +19,22 @@ body {
   display: flex;
   flex-direction: column;
 }
-.content{
+
+.content {
   flex: 1;
 }
 
+h2 {
+  font-family: $def_font;
+  font-size: 28px;
+  color: rgba(0, 0, 0, 0.86);
+  font-weight: 500;
+  padding-bottom: 35px;
+  padding-top: 20px;
+}
+
 //My default UI
-.big-phone{
+.big-phone {
   font-family: $def_font;
   font-size: 26px;
   letter-spacing: 2.2px;
@@ -35,7 +42,7 @@ body {
   color: rgba(0, 0, 0, 0.87);
 }
 
-.big-link-blue{
+.big-link-blue {
   font-family: $def_font;
   font-size: 14px;
   font-weight: 500;
@@ -43,9 +50,13 @@ body {
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
+
+  &:hover{
+    color: #FF6400;
+  }
 }
 
-.slogan{
+.slogan {
   font-family: $def_font;
   font-size: 16px;
   line-height: 1.25;
@@ -56,13 +67,20 @@ body {
   margin: 0 auto;
 }
 
-.light-blue-line{
+.light-blue-line {
   border-top: 2px solid rgba(255, 255, 255, 0.15);
   padding: 20px;
 }
 
-.flex-container{
-  display:flex;
+.orange-line {
+  border-top: 2px solid #ff6000;
+  width: 100%;
+  position: absolute;
+  margin-top: 100px;
+}
+
+.flex-container {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   & > * {
@@ -70,8 +88,11 @@ body {
     align-items: center;
   }
 }
-.flex-container-end{
-  display:flex;
+
+
+
+.flex-container-end {
+  display: flex;
   justify-content: flex-end;
   align-items: center;
   & > * {
@@ -79,29 +100,60 @@ body {
     align-items: center;
   }
 }
-.logo{
+
+.flex-container-vertical {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  & > * {
+    display: flex;
+    align-items: inherit;
+  }
+}
+
+
+.logo {
   display: block;
   margin: 0 auto;
 }
 
-.grey-line{
+.grey-line {
   border-top: solid 1px rgba(0, 0, 0, 0.04);
   border-bottom: solid 1px rgba(0, 0, 0, 0.04);
 }
 
+.my-padding {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.mobile-img {
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.gutter-left-0 {
+  padding-left: 0px;
+}
+
+.gutter-right-0 {
+  padding-right: 0px;
+}
 
 //Styles Template
 
 //header
-header{
+header {
   padding-top: 34px;
   padding-bottom: 34px;
 }
 
-.header-contact{
+.header-contact {
   list-style: none;
   margin: 0 auto;
-  & li{
+  & li {
     line-height: 22px;
     text-align: center;
   }
@@ -109,12 +161,11 @@ header{
 
 //end header
 
-
 //menu
-.main-menu{
+.main-menu {
   list-style: none;
 
-  & li a{
+  & li a {
     text-transform: uppercase;
     text-decoration: none;
     font-family: $def_font;
@@ -122,12 +173,14 @@ header{
     font-weight: 500;
     color: #000000;
     position: relative;
-
+    &:hover{
+      color: #0078D0;
+    }
   }
 
   & li.active {
 
-    & a:after{
+    & a:after {
       content: " "; /* Добавляемый текст */
       display: block;
       color: #333; /* Цвет текста */
@@ -143,7 +196,7 @@ header{
 
 }
 
-.basket-link{
+.basket-link {
   display: block;
   left: 0;
   border: solid 1px #0078d0;
@@ -158,23 +211,394 @@ header{
   background-position: right center;
   background-repeat: no-repeat;
 
+  &:hover{
+    background-color: #EBF6FF;
+  }
+
 }
 
 //end menu
 
+//component search
+.main-search-wrapper {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 100px;
+  // padding-right: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background-color: #0078d0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+  & .main-seaarch-input {
+    border-radius: 2px;
+    background-color: #ffffff;
+    width: 100%;
+    height: 40px;
+    border: none;
+    padding: 15px;
+    font-family: $def_font;
+    font-size: 16px;
+    color: #000;
+    display: block;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.3);
+      font-size: 16px;
+      font-family: $def_font;
+      font-weight: 500;
+    }
+  }
+
+  & .main-search-btn {
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    font-family: $def_font;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ff6400;
+    margin-left: 6px;
+    height: 40px;
+    display: block;
+    width: 50%;
+
+    &:hover{
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+}
+
+//end component search
+
+//component main-banner
+.main-banner-wrapper {
+  padding-bottom: 20px;
+
+  & .main-banner-img {
+    padding-right: 0px;
+    min-height: 100%;
+   display: flex;
+  }
+
+
+  & .main-banner-info {
+    opacity: 0.84;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(to right, #2e6eb2 1%, #2d6bad 47%, #2963a1 52%, #2963a1 100%);
+    background-color: #2963a1;
+    border-radius: 0px 4px 4px 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 90px;
+    padding-bottom: 90px;
+
+    & h3 {
+      font-family: $def_font;
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 1.33;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    & .main-banner-btn {
+      display: block;
+      border-radius: 2px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+      padding: 15px;
+      font-family: $def_font;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #0078cf;
+      text-decoration: none;
+
+      &:hover{
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+
+  }
+
+}
+
+//end component main-banner
+
+//catalog item
+.wrapper-item{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 
 
 
-//footer
-footer{
-  background: #0078d0;
+}
 
-  .footer-menu{
-    list-style: none;
+.item {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 270px;
+  max-width: 270px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
-    & .title-footer-menu{
+
+  & .item-header{
+    padding: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+
+  }
+  & .item-footer{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: inherit;
+
+    & h3{
+      font-family: $def_font;
+      font-size: 15px;
+      color: #000000;
+      font-weight: 400;
+
+      & a{
+        text-decoration: none;
+        font-family: $def_font;
+        font-size: 15px;
+        font-weight: 400;
+        color: #000000;
+      }
+    }
+
+    padding: 10px;
+
+    & .item-price{
+      display: table;
+      width: 100%;
+      font-family: $def_font;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.4);
+      & span{
+        display: table-cell;
+      }
+      & .price{
+        text-align: right;
+        font-weight: 500;
+        color: #000000;
+      }
+    }
+
+  }
+
+}
+
+//end catalog item
+
+//catalog brendlist
+
+.item-brend {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: inherit;
+  min-width: 400px;
+  max-width: 400px;
+  margin-bottom: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+
+  & .item-brend-header{
+    padding: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+
+  }
+  & .item-brend-footer{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: inherit;
+
+    & h3{
       font-family: $def_font;
       font-size: 20px;
+      font-weight: 400;
+      color: #000000;
+
+      & a{
+        text-decoration: none;
+        font-family: $def_font;
+        font-size: 15px;
+        font-weight: 400;
+        color: #000000;
+      }
+    }
+
+    & p{
+      font-family: $def_font;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.54);
+    }
+
+    padding: 10px;
+
+    & .item-brend-info{
+      display: table;
+      width: 100%;
+      font-family: $def_font;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.3);
+      & span{
+        display: table-cell;
+      }
+      & a{
+        display: table-cell;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-decoration: none;
+        text-align: center;
+        color: #0078cf;
+        font-family: $def_font;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        border-radius: 2px;
+        background-color: #fafafa;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+        width: 40%;
+
+        &:hover{
+          opacity: 0.7;
+        }
+      }
+    }
+
+  }
+
+}
+
+//catalog brendlist end
+
+
+// left catalog menu
+.wrapper-left-menu{
+  & ul{
+    list-style: none;
+    padding-left: 0;
+    max-width: 350px;
+
+  }
+  & .left-catalog-menu{
+
+    & li{
+      padding-top: 10px;
+
+      &:hover{
+        opacity: 0.8;
+      }
+      //padding-bottom: 10px;
+    }
+    & li.dropdown{
+
+    }
+    & li.dropdown a{
+
+      padding-right: 20px;
+
+      display: inline-block;
+      position: relative;
+
+      &:after{
+        content: " ";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url("../svg/arrow.svg");
+        background-position: right center;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 0px;
+
+      }
+
+    }
+
+    & li.dropdown a.active{
+
+
+      &:after{
+        transform: rotate(90deg);
+        bottom: 2px;
+      }
+    }
+
+    & li a{
+      text-decoration: none;
+      font-family: $def_font;
+      font-size: 16px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.86);
+
+    }
+
+    & li .dropdown-menu{
+
+      display: none;
+
+      & li {
+
+        padding-right: 15px;
+      }
+      & li a{
+        font-family: $def_font;
+        font-size: 14px;
+        line-height: 3;
+        color: rgba(0, 0, 0, 0.5);
+        background: none;
+        border: none;
+        padding: 0;
+
+        &:after{
+          background: none;
+          content: none;
+        }
+      }
+    }
+
+  }
+
+}
+
+// left catalog menu end
+
+//footer
+footer {
+  background: #0078d0;
+
+  .footer-menu {
+    list-style: none;
+
+    & .title-footer-menu {
+      font-family: $def_font;
+      font-size: 18px;
       font-weight: 500;
       color: #ffffff;
       text-transform: uppercase;
@@ -185,27 +609,27 @@ footer{
       & a {
         text-decoration: none;
         font-family: $def_font;
-        font-size: 16px;
+        font-size: 14px;
         color: #ffffff;
+        &:hover{
+          opacity: 0.6;
+        }
       }
 
     }
   }
 
-  p.copyright{
+  p.copyright {
     font-family: $def_font;
     font-size: 14px;
     color: #ffffff;
   }
 
-    small{
-      font-family: $def_font;
-      font-size: 12px;
-      color: #ffffff;
-    }
+  small {
+    font-family: $def_font;
+    font-size: 12px;
+    color: #ffffff;
+  }
 }
-
-
-
 
 //end footer
