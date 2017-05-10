@@ -33,7 +33,7 @@ h2 {
   padding-top: 20px;
 }
 
-//My default UI
+//My global UI
 .big-phone {
   font-family: $def_font;
   font-size: 26px;
@@ -131,15 +131,47 @@ h2 {
 .mobile-img {
   display: block;
   min-width: 100%;
-  min-height: 100%;
 }
 
 .gutter-left-0 {
   padding-left: 0px;
+  display: flex;
 }
 
 .gutter-right-0 {
   padding-right: 0px;
+}
+
+.-g__sort-link{
+  text-decoration: none;
+  font-family: $def_font;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.86);
+  display: block;
+  float: right;
+  margin-top: -75px;
+
+  &:after{
+    content: " ";
+    display: inline-block;
+    width: 20px;
+    height: 12px;
+    background-image: url("../svg/arrow.svg");
+    background-position: right center;
+    background-repeat: no-repeat;
+    bottom: 0px;
+    transition: transform 1s ease-in-out;
+    transition-duration: 0.2s;
+
+  }
+
+  &.active{
+    &:after{
+      transform: rotate(90deg);
+      transition: transform 1s ease-in-out;
+      transition-duration: 0.2s;
+    }
+  }
 }
 
 //Styles Template
@@ -298,6 +330,7 @@ header {
     padding-right: 40px;
     padding-top: 90px;
     padding-bottom: 90px;
+    width: 100%;
 
     & h3 {
       font-family: $def_font;
@@ -338,6 +371,7 @@ header {
 
 //catalog item
 .wrapper-item{
+  flex: 1 1 auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -355,10 +389,11 @@ header {
   max-width: 270px;
   margin-bottom: 12px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
 
 
   & .item-header{
-    padding: 40px;
+    padding: 30px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
 
@@ -419,10 +454,11 @@ header {
   max-width: 400px;
   margin-bottom: 35px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
 
 
   & .item-brend-header{
-    padding: 40px;
+    padding: 30px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
 
@@ -495,6 +531,48 @@ header {
 
 }
 
+.-sp{
+  .item-brend {
+    margin-bottom: 30px;
+  }
+}
+
+.-g_pi{
+
+  padding-top: 30px;
+
+  & .item {
+    margin-bottom: 50px;
+  }
+}
+
+
+.block-brend{
+  padding-bottom: 30px;
+
+  .info-brend{
+    padding-left: 30px;
+    padding-bottom: 30px;
+
+    & .info-brend__title{
+      font-family: $def_font;
+      font-size: 22px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.86);
+    }
+
+    & .info-brend__text{
+      font-family: $def_font;
+      font-size: 14px;
+      line-height: 1.57;
+      color: rgba(0, 0, 0, 0.7);
+      text-align: justify;
+    }
+
+  }
+}
+
+
 //catalog brendlist end
 
 
@@ -509,7 +587,8 @@ header {
   & .left-catalog-menu{
 
     & li{
-      padding-top: 10px;
+      padding-top: 15px;
+      padding-bottom: 15px;
 
       &:hover{
         opacity: 0.8;
@@ -536,6 +615,8 @@ header {
         background-repeat: no-repeat;
         position: absolute;
         bottom: 0px;
+        transition: transform 1s ease-in-out;
+        transition-duration: 0.2s;
 
       }
 
@@ -546,6 +627,8 @@ header {
 
       &:after{
         transform: rotate(90deg);
+        transition: transform 1s ease-in-out;
+        transition-duration: 0.2s;
         bottom: 2px;
       }
     }
@@ -588,6 +671,61 @@ header {
 }
 
 // left catalog menu end
+
+
+//breadcrumbs
+.breadcrumbs{
+  border-top: solid 1px rgba(0, 0, 0, 0.04);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.04);
+
+  & .bredcrumbs-list{
+    list-style: none;
+    display: flex;
+    padding: 0px;
+
+      & .bredcrumbs-list__li{
+
+        margin-right: 10px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.43;
+        font-family: $def_font;
+        color: #0078d0;
+
+        &:first-child{
+
+          &:before{
+            content: none;
+          }
+        }
+
+        &:before{
+          color: #0078d0;;
+          content: " • ";
+          padding-right: 10px;
+        }
+
+        & .bredcrumbs-list__a{
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1.43;
+          font-family: $def_font;
+          color: #0078d0;
+        }
+
+        & .bredcrumbs-list__a.active{
+          font-weight: 500;
+        }
+
+
+      }
+  }
+}
+
+//breadcrumbs end
+
+
 
 //footer
 footer {
