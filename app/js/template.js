@@ -29,8 +29,6 @@
             var text_block = $('.g__sort-link__letters');
             var str = $('.g__sort-link__letters').text();
             var new_str = str.split("").reverse().join("");
-
-
             if(item.hasClass('active')){
                 item.removeClass('active');
                 text_block.text(new_str);
@@ -39,7 +37,6 @@
                 text_block.text(new_str);
 
             }
-
             return false;
         });
     }
