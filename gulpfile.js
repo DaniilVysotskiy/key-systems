@@ -53,11 +53,18 @@ gulp.task('headersass', function() {
 gulp.task('libs', function() {
     return gulp.src([
         'app/libs/jquery/dist/jquery.min.js',
-        // 'app/libs/magnific-popup/magnific-popup.min.js'
+        'app/libs/owl-carousel/owl.carousel.min.js'
         ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('app/js'));
+});
+
+gulp.task('scripts', function() {
+    return gulp.src('app/js/**/*.js')
+        .pipe(rename({suffix: '.min', prefix : ''}))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('watch', ['sass', 'libs', 'browser-sync'], function() {
@@ -89,7 +96,7 @@ gulp.task('buildhtml', function() {
 
 gulp.task('removedist', function() { return del.sync('dist'); });
 
-gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'sass', 'libs'], function() {
+gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'sass', 'libs', 'scripts'], function() {
 
     var buildCss = gulp.src([
         'app/css/fonts.min.css',
@@ -111,9 +118,9 @@ gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'sass', 'libs'], func
 gulp.task('deploy', function() {
 
     var conn = ftp.create({
-        host:      'hostname.com',
-        user:      'username',
-        password:  'userpassword',
+        host:      'zolotarev-studio.ru',
+        user:      'danil',
+        password:  '8T5o2I4g',
         parallel:  10,
         log: gutil.log
     });
@@ -123,7 +130,7 @@ gulp.task('deploy', function() {
     'dist/.htaccess',
     ];
     return gulp.src(globs, {buffer: false})
-    .pipe(conn.dest('/path/to/folder/on/server'));
+    .pipe(conn.dest('/www/demo.zolotarev-studio.ru'));
 
 });
 

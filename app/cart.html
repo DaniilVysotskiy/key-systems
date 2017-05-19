@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Подкатегории товаров</title>
+    <title>Корзина</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
-    
     <!-- Load CSS, CSS Localstorage & WebFonts Main Function -->
     <script>!function(e){"use strict";function t(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)};function n(t,n){return e.localStorage&&localStorage[t+"_content"]&&localStorage[t+"_file"]===n};function a(t,a){if(e.localStorage&&e.XMLHttpRequest)n(t,a)?o(localStorage[t+"_content"]):l(t,a);else{var s=r.createElement("link");s.href=a,s.id=t,s.rel="stylesheet",s.type="text/css",r.getElementsByTagName("head")[0].appendChild(s),r.cookie=t}}function l(e,t){var n=new XMLHttpRequest;n.open("GET",t,!0),n.onreadystatechange=function(){4===n.readyState&&200===n.status&&(o(n.responseText),localStorage[e+"_content"]=n.responseText,localStorage[e+"_file"]=t)},n.send()}function o(e){var t=r.createElement("style");t.setAttribute("type","text/css"),r.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var r=e.document;e.loadCSS=function(e,t,n){var a,l=r.createElement("link");if(t)a=t;else{var o;o=r.querySelectorAll?r.querySelectorAll("style,link[rel=stylesheet],script"):(r.body||r.getElementsByTagName("head")[0]).childNodes,a=o[o.length-1]}var s=r.styleSheets;l.rel="stylesheet",l.href=e,l.media="only x",a.parentNode.insertBefore(l,t?a:a.nextSibling);var c=function(e){for(var t=l.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};return l.onloadcssdefined=c,c(function(){l.media=n||"all"}),l},e.loadLocalStorageCSS=function(l,o){n(l,o)||r.cookie.indexOf(l)>-1?a(l,o):t(e,"load",function(){a(l,o)})}}(this);</script>
     <!-- Load Custom CSS Start -->
@@ -25,7 +24,7 @@
       <div class="container">
         <div class="row flex-container">
           <div class="col-xl-3">
-            <img class="logo" src="img/logo.png">
+            <img class="logo" src="img/logo.png"/>
           </div>
           <div class="col-xl-6">
             <p class="slogan">
@@ -52,8 +51,17 @@
                 <li><a href="#">Каталог</a></li>
                 <li><a href="#">Компания</a></li>
                 <li><a href="#">Новости</a></li>
-                <li><a href="brandbitris.html">Бренды</a></li>
-                <li><a href="#">Услуги</a></li>
+                <li><a href="brands.html">Бренды</a></li>
+                <li class="hasDropdown">
+                  <a href="#">Услуги</a>
+                  <div class="dropdown">
+                    <ul>
+                      <li><a href="#">Пункт меню 1</a></li>
+                      <li><a href="#">Пункт меню 2</a></li>
+                      <li><a href="#">Пункт меню 3</a></li>
+                    </ul>
+                  </div>
+                </li>
                 <li><a href="#">Контакты</a></li>
               </ul>
             </nav>
@@ -91,10 +99,7 @@
               <a href="#" class="bredcrumbs-list__a">Главная</a>
             </li>
             <li class="bredcrumbs-list__li">
-              <a href="#" class="bredcrumbs-list__a">Каталог (Категории товаров)</a>
-            </li>
-            <li class="bredcrumbs-list__li">
-              <a href="#" class="bredcrumbs-list__a active">Трубы и фитинги</a>
+              <a href="#" class="bredcrumbs-list__a active">Корзина</a>
             </li>
           </ul>
         </div>
@@ -105,132 +110,157 @@
         <div class="orange-line"></div>
         <div class="row">
           <div class="col-xl-12">
-            <h1>Трубы и фитинги</<h1></h1>
-            <div class="title--right-b">
-              <span id="total-items">782 товара</span> в <span id="total-subcategories">8 подкатегориях</span>
+            <div class="top-header">
+              <h1>Корзина</h1>
+              <a href="#" class="btn btn--white2">
+                Вернуться в каталог
+              </a>
             </div>
-            <div class="row">
-              <div class="col-xl-12">
-                <div class="wrapper-item">
-                  <!-- item -->
-                  <div class="item item--wider">
-                    <div class="item-header">
-                      <a href="#"><img class="mobile-img" src="http://placehold.it/193x176"/></a>
-                    </div>
-                    <div class="item-footer">
-                      <h3><a href="#">ТРУБЫ СТАЛЬНЫЕ</a> </h3>
-                      <div class="item-desc">
-                        <span>23 товара</span>
-                      </div>
-                    </div>
+            <section class="order">
+              <div class="table cart">
+                <table border="0">
+                  <tr>
+                    <th class="numeric">№</th>
+                    <th class="numeric">Артикул</th>
+                    <th class="text">Код производителя</th>
+                    <th class="numeric">Наименование товара</th>
+                    <th class="text">Ед. измерения</th>
+                    <th class="text">Наличие</th>
+                    <th class="numeric">Цена, с НДС</th>
+                    <th class="text">Кол-во</th>
+                    <th class="text">Сумма, с НДС</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>3245</td>
+                    <td>0900012/N</td>
+                    <td>МУФТА ОБЖИМНАЯ ВР/ВР ДЛЯ МП НИКЕЛЬ (КНР)</td>
+                    <td>шт.</td>
+                    <td>Да</td>
+                    <td data-price="143.00" class="item-base-price">143,00 ₽</td>
+                    <td>
+                      <span class="spinner-btn" data-item="minus">–</span>
+                      <input class="quantity-spinner" type="number" name="quantity" value="10" min="0">
+                      <span class="spinner-btn" data-item="plus">+</span>
+                    </td>
+                    <td data-price="1430.00" class="total-item-price">
+                      1430,00 ₽
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>1206</td>
+                    <td>0900034/N</td>
+                    <td>СОЕДИНИТЕЛЬ ОБЖИМНОЙ ВР ДЛЯ МП НИКЕЛЬ (КНР)</td>
+                    <td>шт.</td>
+                    <td>Да</td>
+                    <td data-price="206.00" class="item-base-price">206,00 ₽</td>
+                    <td>
+                      <span class="spinner-btn" data-item="minus">–</span>
+                      <input class="quantity-spinner" type="number" name="quantity" value="5" min="0">
+                      <span class="spinner-btn" data-item="plus">+</span>
+                    </td>
+                    <td data-price="206.00" class="total-item-price">
+                      206,00 ₽
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>1207</td>
+                    <td>0900100/N</td>
+                    <td>Кран шаровой латунный IDEAL 090 BP/BP РЫЧАГ ITAP</td>
+                    <td>шт.</td>
+                    <td>Да</td>
+                    <td data-price="516.00" class="item-base-price">516,00 ₽</td>
+                    <td>
+                      <span class="spinner-btn" data-item="minus">–</span>
+                      <input class="quantity-spinner" type="number" name="quantity" value="5" min="0">
+                      <span class="spinner-btn" data-item="plus">+</span>
+                    </td>
+                    <td data-price="516.00" class="total-item-price">
+                      516,00 ₽
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>1922</td>
+                    <td>0900114/N</td>
+                    <td>МАНОМЕТР ДМ02-100 МЕТЕР</td>
+                    <td>шт.</td>
+                    <td>Да</td>
+                    <td data-price="412.05" class="item-base-price">412,00 ₽</td>
+                    <td>
+                      <span class="spinner-btn" data-item="minus">–</span>
+                      <input class="quantity-spinner" type="number" name="quantity" value="11" min="0">
+                      <span class="spinner-btn" data-item="plus">+</span>
+                    </td>
+                    <td data-price="412.00" class="total-item-price">
+                      412,00 ₽
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="cart__bottom">
+                <div class="warning">
+                  <img src="/svg/warning-sign-green.svg">
+                  <span>
+                    Сроки поставки и персональные скидки будут дополнительно согласованы с вами отделом продаж.
+                  </span>
+                </div>
+                <div class="cart__total">
+                  <div>
+                    <span class="grey">Итого к оплате:</span>
+                    <span class="price" data-item="price-total">10 705,00 ₽</span>
                   </div>
-                  <!-- end item -->
-                  <!-- item -->
-                  <div class="item item--wider">
-                    <div class="item-header">
-                      <a href="#"><img class="mobile-img" src="http://placehold.it/193x176"/></a>
-                    </div>
-                    <div class="item-footer">
-                      <h3><a href="#">ТРУБЫ И ФИТИНГИ ПЭ</a></h3>
-                      <div class="item-desc">
-                        <span>43 товара</span>
-                      </div>
-                    </div>
+                  <div>
+                    <span class="grey">В том числе НДС:</span>
+                    <span data-item="price-nds">1 328,00 ₽</span>
                   </div>
-                  <!-- end item -->
-                  <!-- item -->
-                  <div class="item item--wider">
-                    <div class="item-header">
-                      <a href="#"><img class="mobile-img" src="http://placehold.it/193x176"/></a>
-                    </div>
-                    <div class="item-footer">
-                      <h3><a href="#">ТРУБЫ И ФИТИНГИ PP-R (ПОЛИПРОПИЛЕНОВЫЕ)</a></h3>
-                      <div class="item-desc">
-                        <span>12 товаров</span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end item -->
-                  <!-- item -->
-                  <div class="item item--wider">
-                    <div class="item-header">
-                      <a href="#"><img class="mobile-img" src="http://placehold.it/193x176"/></a>
-                    </div>
-                    <div class="item-footer">
-                      <h3><a href="#">ФИТИНГИ СТАЛЬНЫЕ РЕЗЬБОВЫЕ</a></h3>
-                      <div class="item-desc">
-                        <span>15 товаров</span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end item -->
-                  <!-- item -->
-                  <div class="item item--wider">
-                    <div class="item-header">
-                      <a href="#"><img class="mobile-img" src="http://placehold.it/193x176"/></a>
-                    </div>
-                    <div class="item-footer">
-                      <h3><a href="#">ФИТИНГИ ЧУГУННЫЕ РЕЗЬБОВЫЕ</a></h3>
-                      <div class="item-desc">
-                        <span>44 товара</span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end item -->
-                  <!-- item -->
-                  <div class="item item--wider">
-                    <div class="item-header">
-                      <a href="#"><img class="mobile-img" src="http://placehold.it/193x176"/></a>
-                    </div>
-                    <div class="item-footer">
-                      <h3><a href="#">ФИТИНГИ ЛАТУННЫЕ РЕЗЬБОВЫЕ</a></h3>
-                      <div class="item-desc">
-                        <span>24 товара</span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end item -->
-                  <!-- item -->
-                  <div class="item item--wider">
-                    <div class="item-header">
-                      <a href="#"><img class="mobile-img" src="http://placehold.it/193x176"/></a>
-                    </div>
-                    <div class="item-footer">
-                      <h3><a href="#">ТРУБЫ И ФИТИНГИ МЕТАЛЛОПЛАСТИКОВЫЕ</a></h3>
-                      <div class="item-desc">
-                        <span>9 товаров</span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end item -->
-                  <!-- item -->
-                  <div class="item item--wider">
-                    <div class="item-header">
-                      <a href="#"><img class="mobile-img" src="http://placehold.it/193x176"/></a>
-                    </div>
-                    <div class="item-footer">
-                      <h3><a href="#">ТРУБЫ И ФИТИНГИ ИЗ  СШИТОГО ПОЭЛИТЕЛЕНА PE-X</a></h3>
-                      <div class="item-desc">
-                        <span>11 товаров</span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end item -->
                 </div>
               </div>
-            </div>
+            </section>
           </div>
         </div>
+        <div class="orange-line"></div>
         <div class="row">
-         <div class="col-xl-12">
-            <div class="seo-text">
-              <p>
-                Трубопроводы, будь это трубы ВГП или отопительные трубы, будут служить долго, если при их монтаже используются качественные детали. Современные производители предлагают детали для трубопроводов из разных материалов: трубы и фитинги металлопластиковые, трубы полипропиленовые и трубы стальные, латунные фитинги и фитинги PP-R, трубы электросварные, трубы бесшовные и трубы PP-R. Каждый из материалов хорош по-своему. Однако стоит знать, что для того чтобы трубопровод был надежен и отличался качеством, в его монтаже необходимо использовать детали из одного материала. К примеру, фитинги полипропиленовые можно сочетать с трубами только из полипропилена. Наши изделия проходят многоуровневый контроль качества, что гарантирует надежность и прочность деталей.
-              </p>
+          <div class="col-xl-12">
+            <div class="top-header">
+              <h1>Оформление заказа</h1>
             </div>
-         </div>
-        </div>
+            <section class="order__form">
+              <form>
+                <div class="top-b">
+                  <label class="label name" for="name">
+                    <span>Фамилия, имя, отчество *</span>
+                    <input type="text" required name="name" placeholder="Иванов Иван Иванович">
+                  </label>
+                  <label class="label" for="tel">
+                    <span>Номер телефона *</span>
+                    <input type="tel" required name="tel" placeholder="+7 (000) 000-00-00">
+                  </label>
+                  <label class="label" for="email">
+                    <span>Электронная почта *</span>
+                    <input type="email" required name="email" placeholder="username@email.ru">
+                  </label>
+                  <button class="btn btn--orange" type="submit" name="submit">
+                    Оформить заказ
+                  </button>
+                </div>
+                <div class="bottom-b">
+                  <label class="label file_upload" for="file">
+                    <span>Реквизиты</span>
+                    <div>
+                      <mark>Файл не выбран</mark>
+                      <span class="button">Выбрать файл</span>
+                      <input type="file" name="file" class="file">
+                    </div>
+                  </label>
+                </div>
+              </form>
+            </section>
+          </div>
       </div>
+      
       <!-- wrapper content end -->
     </div>
     <!-- content end -->
@@ -291,4 +321,5 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/template.js"></script> -->
   </body>
+</body>
 </html>
