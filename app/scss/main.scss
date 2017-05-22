@@ -25,6 +25,30 @@ body {
 
 .content {
   flex: 1;
+  margin-bottom: 50px;
+  & h1,
+  & h2 {
+    margin-bottom: 0;
+  }
+  &__wrapper {
+    padding: 20px 0;
+  }
+  &__text {
+    font-size: 20px;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.86);
+    & ul {
+      font-weight: 500;
+      line-height: 1.4;
+      color: rgba(0, 0, 0, 0.86);
+      & li + li {
+        margin-top: 20px;
+      }
+    }
+    & .extra-gutter {
+      margin: 40px 0;
+    }
+  }
 }
 
 h1,
@@ -1061,11 +1085,14 @@ footer {
 .default-link {
   text-decoration: none;
   font-family: Roboto,sans-serif;
-  font-size: 16px;
+  font-size: inherit;
   font-weight: 500;
   color: #0078cf;
   &--uppercase {
     text-transform: uppercase;
+  }
+  &--slim {
+    font-weight: 400;
   }
   &--smaller {
     font-size: 14px;

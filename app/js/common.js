@@ -246,6 +246,8 @@ $(function() {
             $( ".file_upload input" ).triggerHandler( "change" );
         });
 
+
+        //Helper functions
         function calculateTotalAndNdsPrice() {
         	var totalSumOfItem = $('.total-item-price'),
         		totalSumOfOrder = 0,
