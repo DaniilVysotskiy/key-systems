@@ -18,19 +18,22 @@ $(function() {
 	// Custom JS
 	//dropDownMenu
 	function dropDownMenu() {
-	    $('.left-catalog-menu > li.dropdown').on('click',function(){
+	    $('.left-catalog-menu > li.dropdown').on('click',function(e){
 	        var link_li  = $(this);
 	        var link_a = link_li.children('a');
-	        if(link_a.hasClass('active')){
 
-	            link_a.removeClass('active');
-	            link_li.children('.dropdown-menu').hide();
-	        }else{
+	        if($(e.target).parent('li').hasClass('menu__item')) {
+		        if(link_a.hasClass('active')){
 
-	            link_a.addClass('active');
-	            link_li.children('.dropdown-menu').show();
+		            link_a.removeClass('active');
+		            link_li.children('.dropdown-menu').hide();
+		        }else{
+
+		            link_a.addClass('active');
+		            link_li.children('.dropdown-menu').show();
+		        }
+		        return false;
 	        }
-	        return false;
 	    });
 	}
 	//dropDownMenu END
@@ -270,6 +273,18 @@ $(function() {
 	};
 	// Cart functionality END
 
+	// Main search functionality
+	function searchHandle(){
+		$('#main-search-input').on('input', function(){
+			if($(this).val() != '') {
+				$('.main-search__hints').show();
+			} else {
+				$('.main-search__hints').hide();
+			}
+		});
+	}
+	// Main search functionality END
+
 	$(document).ready(function(){
 		dropDownMenu();
 		sortAlphabet();
@@ -277,5 +292,6 @@ $(function() {
 		tabMenuHandle();
 		tableHandle();
 		cartHandle();
+		searchHandle()
 	})	
 });
