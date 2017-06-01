@@ -171,7 +171,7 @@ h3 {
 .grey-seporator {
   border-top: solid 1px rgba(0, 0, 0, 0.04);
   position: relative;
-  margin: 0;  
+  margin: 0;
   margin-bottom: 30px;
   width: 100%;
 }
@@ -252,7 +252,7 @@ header {
 .header-contact {
   list-style: none;
   margin: 0;
-  padding: 0; 
+  padding: 0;
   & li {
     line-height: 22px;
     text-align: center;
@@ -266,7 +266,6 @@ header {
 
 .hasDropdown {
   position: relative;
-  z-index: 10;
   padding-right: 20px;
   width: auto;
   &::after {
@@ -299,7 +298,7 @@ header {
     visibility: hidden;
     position: absolute;
     top: 0;
-    z-index: 11;
+    z-index: 10;
     &__item {
       &.checked {
         background-color: #eee;
@@ -433,7 +432,7 @@ header {
     &--wrapper {
       position: relative;
       flex: 1 1 auto;
-    }    
+    }
     &::placeholder {
       color: rgba(0, 0, 0, 0.3);
       font-size: 16px;
@@ -1296,7 +1295,7 @@ footer {
     }
     &:hover {
       background-color: #fff;
-      color: $accent_color; 
+      color: $accent_color;
       &:before {
         background-image: url('../svg/eye.svg');
       }
@@ -1363,6 +1362,7 @@ footer {
   flex-flow: row wrap;
   padding: 0 10px;
   margin-bottom: 25px;
+  z-index: 10;
   &__item {
     & + & {
       margin-left: 20px;
@@ -1409,7 +1409,7 @@ footer {
       font-size: 20px;
       font-weight: 500;
       color: #000000;
-    } 
+    }
   }
   &__price {
     font-family: $def_font;
@@ -1434,7 +1434,7 @@ footer {
     list-style: none;
   }
 }
-// info block style END 
+// info block style END
 
 // btns styles
 .btn {
@@ -1517,7 +1517,7 @@ footer {
   }
 }
 
-// params item block END 
+// params item block END
 
 // section tabs
 .section-tabs {
@@ -1621,7 +1621,7 @@ footer {
 
 // table
 .table {
-  padding: 30px 0;  
+  padding: 30px 0;
   overflow-x: auto;
   & table {
     width: 100%;
@@ -1729,9 +1729,9 @@ footer {
   border-radius: 2px;
   border: 1px solid #efefef;
   &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 }
 
@@ -2031,7 +2031,7 @@ footer {
 }
 .file_upload {
     position: relative;
-    font-size: 1em;   
+    font-size: 1em;
     line-height: 2em;
     &.focus mark {
       outline-color: rgb(77, 144, 254);
@@ -2047,7 +2047,7 @@ footer {
       & .button,
       & mark {
         display: block;
-        cursor: pointer;       
+        cursor: pointer;
       }
       & .button {
         box-sizing: border-box;
@@ -2082,7 +2082,7 @@ footer {
       }
     }
 
-    
+
 }
 input.file {
   position: absolute;
