@@ -16,7 +16,7 @@ var gulp           = require('gulp'),
         bourbon        = require('node-bourbon'),
         ftp            = require('vinyl-ftp'),
         notify         = require("gulp-notify");
-
+      
 gulp.task('browser-sync', function() {
     browserSync({
         server: {

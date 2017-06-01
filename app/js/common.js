@@ -14,8 +14,65 @@ $(function() {
 	    return (c ? num.replace('.', c) : num).replace(new RegExp(re, 'g'), '$&' + (s || ','));
 	};
 
+	// Smooth scroll
+	function smoothScroll(){
+		$('[data-type="smooth"]').click(function() {
+			var link = $(this).attr('href');
 
+		    $('html, body').animate({
+		        scrollTop: $(link).offset().top
+		    }, 300);
+		});
+	}
+	// Smooth scroll END
 	// Custom JS
+	//Product preview card bottom description block same height as on basic card on hover effect
+	function sameHeightProductCardOnHover() {
+		if($('.item').length){
+			var allItems = $('.item');
+
+			for (var i = 0; i < allItems.length; i++) {
+				var height = $(allItems[i]).find('.item__footer').outerHeight();
+				$(allItems[i]).find('.hover-with-text-and-btn > .item__footer--wrapper').css('height', height);
+			}
+		}
+	}
+	// Dropdown filters
+	function dropdownFilters() {
+		var allFilters = $('.hasDropdown--filter');
+
+		for (var i = 0; i < allFilters.length; i++) {
+			var width = $(allFilters[i]).find('.dropdown').outerWidth();
+
+			$(allFilters[i]).css('width', width - 1);
+		}
+		
+		$(document).on('click', function(e){
+			if($(e.target).closest('div').hasClass('hasDropdown--filter')){
+				var that = e.target;
+
+				$('.dropdown').removeClass('active');
+				$(that).closest('div').find('.dropdown').addClass('active');
+			} else if ($(e.target).closest('div').hasClass('dropdown')) {
+				e.stopPropagation();
+				var that = e.target;
+				var text = $(that).data('text');
+
+				$(that)
+					.addClass('checked')
+					.siblings('li')
+					.removeClass('checked')
+					.closest('.hasDropdown')
+					.find('span')
+					.text(text);
+
+				$(that).closest('.dropdown').removeClass('active');
+			} else {
+				$('.dropdown').removeClass('active');
+			}
+		})
+	}
+	// Dropdown list and filters END
 	//dropDownMenu
 	function dropDownMenu() {
 	    $('.left-catalog-menu > li.dropdown').on('click',function(e){
@@ -285,13 +342,31 @@ $(function() {
 	}
 	// Main search functionality END
 
+	// News page cut-link functionality
+	function cutLinkHandle(){
+		$('[data-type="cut-link"]').on('click', function(e){
+			var link = $(this).attr('href');
+			e.preventDefault();
+
+			$(this).hide();
+			$(link).show();
+		})
+
+
+	}
+	// News page cut-link functionality END
+
 	$(document).ready(function(){
+		smoothScroll();
 		dropDownMenu();
 		sortAlphabet();
 		sliderInit();
 		tabMenuHandle();
 		tableHandle();
 		cartHandle();
-		searchHandle()
+		searchHandle();
+		sameHeightProductCardOnHover();
+		dropdownFilters();
+		cutLinkHandle()
 	})	
 });
