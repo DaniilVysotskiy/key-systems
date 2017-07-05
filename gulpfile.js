@@ -16,7 +16,7 @@ var gulp           = require('gulp'),
         bourbon        = require('node-bourbon'),
         ftp            = require('vinyl-ftp'),
         notify         = require("gulp-notify");
-      
+
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
@@ -53,7 +53,8 @@ gulp.task('headersass', function() {
 gulp.task('libs', function() {
     return gulp.src([
         'app/libs/jquery/dist/jquery.min.js',
-        'app/libs/owl-carousel/owl.carousel.min.js'
+        'app/libs/owl-carousel/owl.carousel.min.js',
+        'app/libs/masked-input/dist/jquery.maskedinput.min.js',
         ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
@@ -82,7 +83,7 @@ gulp.task('imagemin', function() {
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         })))
-        .pipe(gulp.dest('dist/img')); 
+        .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('buildhtml', function() {

@@ -312,4 +312,20 @@
 		top: 0;
 		left: -50%;
 	}
+  body .modal__dialog {
+    width: 310px;
+  }
+	body .form__control {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	body .form__control .my-checkbox {
+		margin-left: 0;
+	}
+	body .my-checkbox label {
+		display: flex;
+		&::before {
+	    flex: 1 0 auto;
+		}
+	}
 }
