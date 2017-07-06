@@ -516,11 +516,51 @@ header {
 }
 
 //end component search
+// SLIDER
+.slider {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  &__item {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    max-height: 354px;
+    & img {
+      width: 100%;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    opacity: 0.84;
+    background-color: #2963a1;
+    filter
+    top: 0;
+    right: 0;
+    width: 515px;
+    height: 100%;
+    z-index: 2;
+    & h3 {
+      font-family: $def_font;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.33;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}
+// SLIDER END
 
 //component main-banner
 .main-banner {
   &__wrapper {
-    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
   &__img {
     padding-right: 0px;
