@@ -2512,7 +2512,12 @@ input.file {
     }
   }
   & .button-wrapper {
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & .status {
+      color: #ff6400;
+    }
   }
 }
 // FORMS END
