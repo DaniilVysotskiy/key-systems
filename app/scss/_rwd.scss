@@ -86,6 +86,10 @@
 		padding-left: 0;
 		margin: 20px 0;
 	}
+	body .product__info > div + div {
+		margin-top: 20px;
+	}
+
 	// Product page END
 
 	// Clients page
@@ -314,6 +318,7 @@
 	}
   body .modal__dialog {
     width: 310px;
+    padding: 20px;
   }
 	body .form__control {
 		flex-direction: column;

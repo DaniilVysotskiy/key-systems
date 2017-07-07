@@ -158,7 +158,7 @@
                     </div>
                     <div>
                       <div class="info__btns">
-                        <button class="btn btn--white"  data-link="modal" data-href="#modal-call">
+                        <button class="btn btn--white"  data-link="modal" data-href="#modal-consult">
                         Консультация
                         </button>
                         <button class="btn btn--blue" data-link="modal" data-href="#modal-buy">
@@ -701,12 +701,6 @@
                 </label>
                 <input type="tel" name="tel" id="call-tel" data-item="tel" required="required" placeholder="+7 (000) 000-00-00">
               </div>
-              <div class="form__control">
-                <label for="call-comment">
-                  <strong>Ваш вопрос</strong>
-                </label>
-                <input type="text" name="comment" id="call-comment" placeholder="Что вы хотите узнать?">
-              </div>
               <div class="form__control agree">
                 <div class="my-checkbox">
                   <input type="checkbox" name="agree" id="call-agree" required="required">
@@ -724,17 +718,63 @@
         </div>
       </div>
     </div>
+    <!-- Modal call -->
+    <div id="modal-consult" class="modal" role="dialog">
+      <div class="modal__dialog">
+        <div class="modal__content">
+          <div class="modal__header">
+            <h3 class="modal__title">
+              Консультация по товару
+            </h3>
+            <p>
+              <small>Оставьте ваши контактные данные и вопрос, который вас интересует.<br> Наш менеджер свяжется с вами в самое ближайшее время!</small>
+            </p>
+          </div>
+          <div class="modal__body">
+            <form action="" method="" class="form">
+              <div class="form__control">
+                <label for="consult-name">
+                  <strong>Имя</strong>
+                </label>
+                <input type="text" name="name" id="consult-name" required="required" placeholder="Ваше имя">
+              </div>
+              <div class="form__control">
+                <label for="consult-tel">
+                  <strong>Телефон</strong>
+                </label>
+                <input type="tel" name="tel" id="consult-tel" data-item="tel" required="required" placeholder="+7 (000) 000-00-00">
+              </div>
+              <div class="form__control">
+                <label for="consult-comment">
+                  <strong>Вопрос</strong>
+                </label>
+                <textarea rows="5" name="comment" id="consult-comment"></textarea>
+              </div>
+              <div class="form__control agree">
+                <div class="my-checkbox">
+                  <input type="checkbox" name="agree" id="consult-agree" required="required">
+                  <label for="consult-agree">
+                    <small>Я согласен на обработку персональных данных</small>
+                  </label>
+                </div>
+              </div>
+              <div class="button-wrapper">
+                <span class="status" id="consult-message">Спасибо! Ваша заявка отправлена.</span>
+                <button type="submit" class="btn btn--blue">Заказать</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Modal buy -->
     <div id="modal-buy" class="modal" role="dialog">
       <div class="modal__dialog">
         <div class="modal__content">
           <div class="modal__header">
             <h3 class="modal__title">
-              Оформление заказа
+              <span>PRODUCT_NAME</span>
             </h3>
-            <p>
-              Вы заказали <span>PRODUCT_NAME</span>. Заполните, пожалуйста, форму ниже, чтобы оформить заказ.
-            </p>
           </div>
           <div class="modal__body">
             <form action="" method="" class="form">
@@ -750,12 +790,12 @@
                 </label>
                 <input type="tel" name="tel" id="buy-tel" data-item="tel" required="required" placeholder="+7 (000) 000-00-00">
               </div>
-              <div class="form__control">
+              <!-- <div class="form__control">
                 <label for="buy-email">
                   <strong>Электронная почта</strong>
                 </label>
                 <input type="email" name="email" id="buy-email" required="required" placeholder="Ваша почта">
-              </div>
+              </div> -->
               <div class="form__control agree">
                 <div class="my-checkbox">
                   <input type="checkbox" name="agree" id="buy-agree" required="required">
@@ -766,7 +806,7 @@
               </div>
               <div class="button-wrapper">
                 <span class="status" id="buy-message">Спасибо! Ваша заявка отправлена.</span>
-                <button type="submit" class="btn btn--blue">Заказать</button>
+                <button type="submit" class="btn btn--blue">Отправить</button>
               </div>
             </form>
           </div>

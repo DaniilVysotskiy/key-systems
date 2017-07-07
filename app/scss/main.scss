@@ -2464,16 +2464,24 @@ input.file {
     & form {
       display: flex;
 			flex-direction: column;
-			& input {
+			& input,
+      & textarea {
+        flex: 1 1 auto;
         padding: 12px 15px;
         border-radius: 5px;
         border: 1px solid #35C0EC;
+        width: 100%;
         font-size: 16px;
         line-height: 1.25;
         color: #000000;
         border-radius: 2px;
         background-color: #ffffff;
-        border: solid 1px #007aff;
+        border: solid 1px #e7e7e7;
+        &:active,
+        &:focus {
+          border: solid 1px #007aff;
+          outline: none;
+        }
         &::placeholder {
           font-size: 16px;
           line-height: 1.25;
@@ -2494,7 +2502,8 @@ input.file {
   &__control {
     display: flex;
     align-items: center;
-    & input {
+    & input,
+    & textarea {
       flex: 1 0 auto;
     }
     & label strong {
@@ -2517,6 +2526,7 @@ input.file {
     align-items: center;
     & .status {
       color: #ff6400;
+      margin-right: 10px;
     }
   }
 }
