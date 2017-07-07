@@ -2502,6 +2502,12 @@ input.file {
   &__control {
     display: flex;
     align-items: center;
+    &.textarea {
+      align-items: flex-start;
+      & > label {
+        margin-top: 10px;
+      }
+    }
     & input,
     & textarea {
       flex: 1 0 auto;
